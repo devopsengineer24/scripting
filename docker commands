@@ -1,0 +1,36 @@
+Docker commands:
+
+docker –version                
+display the docker version.
+sudo docker version
+           display the client and server versions as same
+docker ps -a
+		display the current processed messages
+Container:just we connect using container id or container name
+
+Image is a logical entity. Container is a real world entity. Image is created only once. Containers are created any number of times using image
+
+docker images 
+		display the all images list in docker
+docker rm <container id>
+		delete the docker container using id
+docker rm -f <container id>
+		delete the docker container forcely using container id
+docker rmi  <image name>
+		delete the images using image name
+docker rmi  -f  <image name>
+		delete the images forced using image name 
+docker pull <version>
+               to pull the image from docker hub
+docker run 
+		to run the image as a container
+docker run --name my-webserver -d -p 8080:80 nginx:2.4
+                --name name of the container 
+		-d detach in background
+		-p port number insted of small p put -P its autometically give port number
+		8080:80  8080 is the port number and 80 is the container port
+		
+----------------------------------------------------------------------------------------------------------------------------
+docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk11
+
+docker run -d -p 8080:8080 --restart=on-failure jenkins/jenkins:lts-jdk11
