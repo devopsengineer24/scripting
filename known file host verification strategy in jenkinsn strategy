@@ -1,0 +1,10 @@
+# go to the jenkins instalation server
+# connect to root user
+#sudo su
+root@ip-172-31-43-156:cd /var/lib/jenkins/
+root@ip-172-31-43-156:/var/lib/jenkins# ssh-keyscan -H target ip address >> /var/lib/jenkins/.ssh/known_hosts
+root@ip-172-31-43-156:/var/lib/jenkins/.ssh#cat known_hosts
+#change the group and user permission of .ssh folder
+root@ip-172-31-43-156:chown jenkins:jenkins /var/lib/jenkins/.ssh
+
+then connect agent successfully
