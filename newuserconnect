@@ -1,0 +1,20 @@
+#creating user.......
+sudo adduser rayudu
+#adding sudo permissions to rayudu
+usermod -aG sudo rayudu
+#change to super user
+sudo su
+#edit to avoid the password of rayudu
+vi /etc/sudoers.d/90-cloud-init-users
+add rayudu ALL=(ALL) NOPASSWD:ALL
+type :w ! sudo tee %
+#connected to rayudu user to create new directory
+mkdir -p .ssh
+#generate keys id_rsa,id_rsa.pub using ssh-keygen
+#type vi authorized_keys
+#copy id_rsa.pub to authorized_keys
+#copy id_rsa to rayudu.pem
+#connect ssh
+ssh -i "rayudu.pem" rayudu@ec2-3-111-29-102.ap-south-1.compute.amazonaws.com
+
+
